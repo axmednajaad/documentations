@@ -140,7 +140,7 @@ su - frappe
 pip3 install frappe-bench
 ```
 
-### Step 14: Initialize Bench
+### Step 15: Initialize Bench
 ```bash
 bench init frappe-bench --frappe-branch version-15 --python python3.11
 cd frappe-bench
@@ -157,10 +157,10 @@ bench use dcode.com
 # Install payments app
 bench get-app payments
 
-# Install ERPNext version 14
-bench get-app erpnext --branch version-14
+# Install ERPNext version 15
+bench get-app erpnext --branch version-15
 # OR
-bench get-app https://github.com/frappe/erpnext --branch version-14
+bench get-app https://github.com/frappe/erpnext --branch version-15
 
 # Install ERPNext on the site
 bench --site dcode.com install-app erpnext
