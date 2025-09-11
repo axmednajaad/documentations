@@ -127,10 +127,29 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
 
 ### Step 12: Create Frappe User
 ```bash
+# Create new user
 sudo adduser frappe
 sudo usermod -aG sudo frappe
 sudo usermod -aG www-data frappe
+
+# Switch to new user
 su - frappe
+
+# Install user-specific dependencies
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.bashrc
+nvm install 18
+nvm use 18
+npm install -g yarn
+
+# Install bench for this user
+pip3 install frappe-bench
+
+# Verify installations
+node --version      # Should show v18.x
+python3.11 --version # Should show Python 3.11.x
+bench --version     # Should show bench version
+
 ```
 
 ## Frappe Bench Installation
