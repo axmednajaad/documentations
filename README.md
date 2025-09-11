@@ -150,6 +150,10 @@ node --version      # Should show v18.x
 python3.11 --version # Should show Python 3.11.x
 bench --version     # Should show bench version
 
+# if you got this : -bash: bench: command not found do this below 
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+bench --version     # Should show bench version
 ```
 
 ## Frappe Bench Installation
