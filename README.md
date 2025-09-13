@@ -123,7 +123,7 @@ sudo npm install -g yarn
 sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
 ```
 
-## Create Dedicated User
+## Create Dedicated User And Install Frappe Bench
 
 ### Step 12: Create Frappe User
 ```bash
