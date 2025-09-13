@@ -193,7 +193,15 @@ bench start
 
 ### Step 18: Setup Production Environment
 ```bash
+# Exit back to the root shell
+exit
+
 sudo bench setup production dcode-frappe
+
+# The command above needs to know the user. It will find the bench in /home/frappe/frappe-bench.
+# Restart the services
+sudo bench restart
+# Or
 bench restart
 ```
 
