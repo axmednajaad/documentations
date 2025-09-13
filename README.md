@@ -142,7 +142,7 @@ nvm install 18
 nvm use 18
 npm install -g yarn
 
-# Install bench for this user
+#  Frappe Bench Installation
 pip3 install frappe-bench
 
 # Verify installations
@@ -154,13 +154,6 @@ bench --version     # Should show bench version
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 bench --version     # Should show bench version
-```
-
-## Frappe Bench Installation
-
-### Step 13: Install Frappe Bench
-```bash
-pip3 install frappe-bench
 ```
 
 ### Step 15: Initialize Bench
