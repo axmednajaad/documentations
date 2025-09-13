@@ -214,13 +214,13 @@ If JS and CSS files are not loading on the login window, run:
 sudo chmod o+x /home/dcode-frappe
 ```
 
-### Step 20: SSL Certificate for HTTPS
+### Step 19: SSL Certificate for HTTPS
 ```bash
 sudo apt install certbot python3-certbot-nginx
 certbot -d {domain_name} --register-unsafely-without-email
 ```
 
-### Step 21: Auto-renew SSL Certificate
+### Step 20: Auto-renew SSL Certificate
 ```bash
 sudo certbot renew --dry-run
 ```
