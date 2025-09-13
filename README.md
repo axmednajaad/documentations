@@ -214,13 +214,6 @@ If JS and CSS files are not loading on the login window, run:
 sudo chmod o+x /home/dcode-frappe
 ```
 
-### Step 19: Create Production User
-```bash
-sudo adduser dcode-frappe
-sudo usermod -aG sudo dcode-frappe
-su - dcode-frappe
-```
-
 ### Step 20: SSL Certificate for HTTPS
 ```bash
 sudo apt install certbot python3-certbot-nginx
