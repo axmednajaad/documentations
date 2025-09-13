@@ -166,8 +166,8 @@ cd frappe-bench
 ```bash
 bench new-site dcode.com
 bench use dcode.com
-bench --site axmed.com add-to-hosts
-bench --site axmed.com migrate
+bench --site dcode.com add-to-hosts
+bench --site dcode.com migrate
 ```
 
 ### Step 16: Install ERPNext
