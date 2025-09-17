@@ -239,4 +239,28 @@ certbot -d {domain_name} --register-unsafely-without-email
 sudo certbot renew --dry-run
 ```
 
+
+## bench restart not works Some Issue may you face nodejs version says 12 when you run this command : sudo /usr/bin/node -v  solve this below steps :
+``` 
+sudo apt-get remove -y nodejs libnode-dev
+sudo apt-get purge  -y nodejs libnode-dev
+sudo apt-get autoremove -y
+
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+sudo /usr/bin/node -v
+
+# Refresh the supervisor
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl restart frappe-bench-node-socketio
+
+# now run those command to verify
+sudo /usr/bin/node -v  # it should say v18.20.8
+bench restart   # it will work insha allah
+
+```
+
+
 This guide provides a complete setup for Frappe/ERPNext version 15 on Ubuntu 22.04 LTS, including production deployment with NGINX, SSL, and proper security configurations.
