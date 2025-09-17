@@ -188,6 +188,13 @@ bench get-app https://github.com/frappe/erpnext --branch version-15
 
 # Install ERPNext on the site
 bench --site dcode.com install-app erpnext
+
+# Install Rasiin Design if needed
+bench get-app  https://github.com/Rasiintech/rasiin_design.git
+
+# Install RASIIN DESIGN on the site
+bench --site dcode.com install-app rasiin_design
+
 ```
 
 ### Step 18: Start Development Server
