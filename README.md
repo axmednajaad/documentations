@@ -114,7 +114,6 @@ nvm use 18
 
 ### Step 10: Install Yarn
 ```bash
-sudo apt-get install npm -y
 sudo npm install -g yarn
 ```
 
@@ -123,9 +122,17 @@ sudo npm install -g yarn
 sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
 ```
 
-## Create Dedicated User And Install Frappe Bench
+## Install Frappe Bench (System-wide)
 
-### Step 12: Create Frappe User
+### Step 12: Install Frappe Bench as Root
+```bash
+sudo -H pip3 install frappe-bench
+bench --version
+```
+
+## Create Dedicated User
+
+### Step 13: Create Frappe User
 ```bash
 # Create new user
 sudo adduser frappe
@@ -134,27 +141,26 @@ sudo usermod -aG www-data frappe
 
 # Switch to new user
 su - frappe
+```
 
-# Install user-specific dependencies
+### Step 14: Install User-specific Dependencies
+```bash
+# Install NVM and Node.js for the frappe user
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 nvm install 18
 nvm use 18
-npm install -g yarn
 
-#  Frappe Bench Installation
-pip3 install frappe-bench
+# Install Yarn for the frappe user
+npm install -g yarn
 
 # Verify installations
 node --version      # Should show v18.x
 python3.11 --version # Should show Python 3.11.x
-bench --version     # Should show bench version
-
-# if you got this : -bash: bench: command not found do this below 
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-bench --version     # Should show bench version
+bench --version     # Should show bench version (system-wide installation)
 ```
+
+## Initialize Bench and Create Site
 
 ### Step 15: Initialize Bench
 ```bash
@@ -162,7 +168,7 @@ bench init frappe-bench --frappe-branch version-15 --python python3.11
 cd frappe-bench
 ```
 
-### Step 15: Create a Site
+### Step 16: Create a Site
 ```bash
 bench new-site dcode.com
 bench use dcode.com
@@ -170,7 +176,7 @@ bench --site dcode.com add-to-hosts
 bench --site dcode.com migrate
 ```
 
-### Step 16: Install ERPNext
+### Step 17: Install ERPNext
 ```bash
 # Install payments app
 bench get-app payments
@@ -184,19 +190,19 @@ bench get-app https://github.com/frappe/erpnext --branch version-15
 bench --site dcode.com install-app erpnext
 ```
 
-### Step 17: Start Development Server
+### Step 18: Start Development Server
 ```bash
 bench start
 ```
 
 ## Production Setup
 
-### Step 18: Setup Production Environment
+### Step 19: Setup Production Environment
 ```bash
 # Exit back to the root shell
 exit
 
-sudo bench setup production dcode-frappe
+sudo bench setup production frappe
 
 # The command above needs to know the user. It will find the bench in /home/frappe/frappe-bench.
 # Restart the services
@@ -207,21 +213,21 @@ bench restart
 
 If `bench restart` doesn't work, run the setup command again and answer Yes to all questions:
 ```bash
-sudo bench setup production dcode-frappe
+sudo bench setup production frappe
 ```
 
 If JS and CSS files are not loading on the login window, run:
 ```bash
-sudo chmod o+x /home/dcode-frappe
+sudo chmod o+x /home/frappe
 ```
 
-### Step 19: SSL Certificate for HTTPS
+### Step 20: SSL Certificate for HTTPS
 ```bash
 sudo apt install certbot python3-certbot-nginx
 certbot -d {domain_name} --register-unsafely-without-email
 ```
 
-### Step 20: Auto-renew SSL Certificate
+### Step 21: Auto-renew SSL Certificate
 ```bash
 sudo certbot renew --dry-run
 ```
