@@ -190,7 +190,7 @@ bench get-app https://github.com/frappe/erpnext --branch version-15
 bench --site dcode.com install-app erpnext
 
 # Install Rasiin Design if needed
-bench get-app  https://github.com/Rasiintech/rasiin_design.git
+bench get-app  https://github.com/axmednajaad/axmed_design
 
 # Install RASIIN DESIGN on the site
 bench --site dcode.com install-app rasiin_design
