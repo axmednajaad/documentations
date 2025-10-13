@@ -312,7 +312,17 @@ bench setup nginx
 
 sudo service nginx reload
 
+## Some Issue happens on bench start
 ```
+lsof -i :13000 
+lsof -i :11000 
+# If you found PID runnning do the following :
+pkill -f "redis-server" 
+pkill -f "frappe"
+pkill -f "node"
+# Additional run this 
+sudo kill -9 79143 
 
+```
 
 This guide provides a complete setup for Frappe/ERPNext version 15 on Ubuntu 22.04 LTS, including production deployment with NGINX, SSL, and proper security configurations.
