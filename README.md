@@ -312,17 +312,19 @@ bench setup nginx
 
 sudo service nginx reload
 
-## Some Issue happens on bench start
+
 ```
-# First check what is proccess is running :
- - lsof -i :13000 
- - lsof -i :11000 
-# If you found PID runnning do the following :
- - pkill -f "redis-server" 
- - pkill -f "frappe"
- - pkill -f "node"
-# Additional run this 
- - sudo kill -9 79143 
+## Some Issue happens on bench start
+
+ # First check what is proccess is running :
+  - lsof -i :13000 
+  - lsof -i :11000 
+ # If you found PID runnning do the following :
+  - pkill -f "redis-server" 
+  - pkill -f "frappe"
+  - pkill -f "node"
+ # Additional run this 
+  - sudo kill -9 79143 
 
 ```
 
