@@ -1,5 +1,7 @@
 # Frappe/ERPNext Version 15 Installation Guide for Ubuntu 22.04 LTS
 
+# Installation Video YouTube : https://www.youtube.com/watch?v=TReR0I0O1Xo&t=1148s
+
 A complete guide to install Frappe/ERPNext version 15 in Ubuntu 22.04 LTS with production setup.
 
 ## Pre-requisites
