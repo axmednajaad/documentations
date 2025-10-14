@@ -209,8 +209,7 @@ bench start
 
 ### Step 19: Setup Production Environment
 ```bash
-# Exit back to the root shell
-exit
+# Make sure you are on Frappebench directory
 
 sudo bench setup production frappe
 
