@@ -242,6 +242,16 @@ sudo certbot renew --dry-run
 ```
 
 
+### Multi-tenant Articheture with domains 
+``` bash
+sudo apt install fuse
+sudo apt install snapd
+sudo snap install --classic certbot
+sudo certbot --nginx
+
+```
+
+
 ## bench restart not works Some Issue may you face nodejs version says 12 when you run this command : sudo /usr/bin/node -v  solve this below steps :
 ``` 
 sudo apt-get remove -y nodejs libnode-dev
