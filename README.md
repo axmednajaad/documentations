@@ -328,4 +328,9 @@ sudo service nginx reload
 
 ```
 
+## Connect your server via ssh after reinstalling operating system 
+```
+ ssh-keygen -R 104.251.212.71
+```
+
 This guide provides a complete setup for Frappe/ERPNext version 15 on Ubuntu 22.04 LTS, including production deployment with NGINX, SSL, and proper security configurations.
